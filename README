@@ -1,0 +1,13 @@
+UbaPlayer – The jQuery HTML5 Audio Player with Flash Fallback
+
+http://www.brianhadaway.com/ubaplayer-the-jquery-html5-audio-player-with-flash-fallback/
+
+UbaPlayer is a simple jQuery plugin that plays audio natively in modern browsers and uses Flash where native playback is impossible.
+
+For the latest on UbaPlayer visit http://www.brianhadaway.com
+
+Dual licensed under the MIT and GPL licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/copyleft/gpl.html
+
+Author: Brian C. Hadaway
