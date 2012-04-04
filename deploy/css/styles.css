@@ -1,0 +1,43 @@
+body {
+	font: 12px normal Helvetica, Arial, sans-serif;
+	margin: 0 10px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#fallback {
+	display: none;
+}
+
+.audioButton {
+	background: url("../img/btn.png") no-repeat 0 7px;
+	cursor: pointer;
+	margin: 0;
+	padding: 10px 10px 10px 25px;
+	width: 200px;
+}
+
+.audioButton:hover {
+	background-position: 0 -33px;
+}
+
+.audioButton.playing {
+	background-position: 0 -73px;
+}
+
+.audioButton.playing:hover {
+	background-position: 0 -113px;
+}
+
+.audioButton.loading,
+.audioButton.loading:hover {
+	background-position: 0 -153px;
+}
+
+#player {
+	display: none;
+}

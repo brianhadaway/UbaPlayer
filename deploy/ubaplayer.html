@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>ubaPlayer | One-Button HTML5 Audio Player with Flash Fallback | Brian Hadaway</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery.ubaplayer-1.0.0.src.js"></script>
+        <script>
+            $(function(){
+				//basic config
+				//$("#ubaPlayer").ubaPlayer();
+				
+				//set volume
+				/*setting volume only works for desktops :http://developer.apple.com/library/safari/#documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#//apple_ref/doc/uid/TP40009523-CH5-SW1*/
+				/*$("#ubaPlayer").ubaPlayer({
+                    	volume: 1
+                });*/
+
+				//autoplay
+				/*$("#ubaPlayer").ubaPlayer({	
+                    autoPlay: $('.audioButton').eq(0)
+                });*/
+				
+				//preferred codecs/additional codecs
+				//--play MP3 first if possible
+				/*$("#ubaPlayer").ubaPlayer({
+                    	codecs: [{name:"MP3", codec: 'audio/mpeg'}, {name:"OGG", codec: 'audio/ogg; codecs="vorbis"'}]
+                });*/
+				
+				//--only play MP3
+				$("#ubaPlayer").ubaPlayer({
+                    	codecs: [{name:"MP3", codec: 'audio/mpeg'}]
+                });
+				
+				//external controls
+				/*$('button').click(function(){
+					if($("#ubaPlayer").ubaPlayer("playing") == true){
+						$(this).html("Play");
+						$("#ubaPlayer").ubaPlayer("pause");
+					} else {
+						$(this).html("Pause");
+						$("#ubaPlayer").ubaPlayer("resume");
+					}
+				});*/
+            });
+        </script>
+    </head>
+    <body>
+        <div id="ubaPlayer"></div>
+        <h2>ubaPlayer | One-Button HTML5 Audio Player with Flash Fallback</h2>
+        <ul class="controls">
+            <li class="audioButton" href="media/FiftyYears">Fifty Years</li>
+            <li class="audioButton" href="media/AwMan">Aw Man</li>
+            <li class="audioButton" href="media/ItsAThang">It's a Thang...</li>
+            <li class="audioButton" href="media/ItsCool">It's Cool</li>
+            <li class="audioButton" href="media/ItWasAGoodThang">It Was a Good Thang</li>
+            <li class="audioButton" href="media/Laugh">Laugh</li>
+            <li class="audioButton" href="media/MmmHmm">Mmm Hmm</li>
+            <li class="audioButton" href="media/MmmHmmLow">Mmm Hmm (Low)</li>
+            <li class="audioButton" href="media/Naw">Naw</li>
+            <li class="audioButton" href="media/ThatsGood">That's Good</li>
+            <li class="audioButton" href="media/Tomorrow">Tomorrow</li>
+            <li class="audioButton" href="media/Well">Well</li>
+            <li class="audioButton" href="media/What">What?!?</li> 
+        </ul>
+    </body>
+</html>
