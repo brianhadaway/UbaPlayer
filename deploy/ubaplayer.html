@@ -9,40 +9,7 @@
         <script>
             $(function(){
 				//basic config
-				//$("#ubaPlayer").ubaPlayer();
-				
-				//set volume
-				/*setting volume only works for desktops :http://developer.apple.com/library/safari/#documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#//apple_ref/doc/uid/TP40009523-CH5-SW1*/
-				/*$("#ubaPlayer").ubaPlayer({
-                    	volume: 1
-                });*/
-
-				//autoplay
-				/*$("#ubaPlayer").ubaPlayer({	
-                    autoPlay: $('.audioButton').eq(0)
-                });*/
-				
-				//preferred codecs/additional codecs
-				//--play MP3 first if possible
-				/*$("#ubaPlayer").ubaPlayer({
-                    	codecs: [{name:"MP3", codec: 'audio/mpeg'}, {name:"OGG", codec: 'audio/ogg; codecs="vorbis"'}]
-                });*/
-				
-				//--only play MP3
-				$("#ubaPlayer").ubaPlayer({
-                    	codecs: [{name:"MP3", codec: 'audio/mpeg'}]
-                });
-				
-				//external controls
-				/*$('button').click(function(){
-					if($("#ubaPlayer").ubaPlayer("playing") == true){
-						$(this).html("Play");
-						$("#ubaPlayer").ubaPlayer("pause");
-					} else {
-						$(this).html("Pause");
-						$("#ubaPlayer").ubaPlayer("resume");
-					}
-				});*/
+				$("#ubaPlayer").ubaPlayer();
             });
         </script>
     </head>
