@@ -5,11 +5,11 @@
         <title>ubaPlayer | One-Button HTML5 Audio Player with Flash Fallback | Brian Hadaway</title>
         <link rel="stylesheet" href="css/styles.css" />
         <script src="js/jquery-1.7.1.min.js"></script>
-        <script src="js/jquery.ubaplayer-1.0.0.src.js"></script>
+        <script src="js/jquery.ubaplayer-1.0.0.min.js"></script>
         <script>
             $(function(){
 				//basic config
-				$("#ubaPlayer").ubaPlayer();
+				$("#ubaPlayer").ubaPlayer({codecs: [{name:"MP3", codec: 'audio/mpeg'}]});
             });
         </script>
     </head>
