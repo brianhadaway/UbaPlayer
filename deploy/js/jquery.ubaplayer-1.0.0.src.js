@@ -6,6 +6,7 @@
 		continuous: false,
 		extension: null,							//file extension used by flash version of audio player
 		flashAudioPlayerPath: "swf/player.swf",		//path to flash version of audio player
+		flashExtension: ".mp3",
 		flashObjectID: "audioPlayer",				//id of flash object
 		loadingClass: "loading",					//class applied to buttons while media loads
 		loop: false,
@@ -13,24 +14,18 @@
 		playingClass: "playing",					//class applied to buttons while media plays
 		swfobjectPath: "js/swfobject.js",			//path to swfobject.js used to embed flash movie in page
 		volume: 0.5									//playback volume - float (0 - 1.0)
-	};
-	
-	var currentTrack;								//reference to the current(or last played) track
-	var isPlaying = false;							//track play state of track
-	var isFlash = true;							//force player into flash mode for testing
-	var audio;										//audio element or id of embedded flash player	
-
-	//vars for caching jQuery wrapped sets								
-	var $buttons;
-	var $tgt;
-	var $el;
-	
-	var playTrack;
-	var resumeTrack;
-	var pauseTrack;
-	
-	//public
-	var methods = {
+	},
+	currentTrack,								//reference to the current(or last played) track
+	isPlaying = false,							//track play state of track
+	isFlash = false,							//force player into flash mode for testing
+	audio,										//audio element or id of embedded flash player									
+	$buttons,
+	$tgt,
+	$el,
+	playTrack,
+	resumeTrack,
+	pauseTrack,
+	methods = {
 		play: function(element){
 			$tgt = element;
 			currentTrack = $tgt.attr("href");
@@ -84,19 +79,18 @@
 		playing: function(){
 			return isPlaying;
 		}
-	}
-	
-	//private
-	var _methods = {
+	},
+	 _methods = {
 		init: function( options ){
+			var types;
 			$.extend(defaults, options);
 			$el = this;
 			$(".controls").bind("click",function(event){
-				_methods.updateTrackState(event)
+				_methods.updateTrackState(event);
 			});
 			$buttons = $("."+defaults.audioButtonClass);
 			
-			var types = defaults.codecs;
+			types = defaults.codecs;
 			for(var i = 0, ilen = types.length; i < ilen; i++){
 				var type = types[i];
 				if(_methods.canPlay(type)){
@@ -107,7 +101,7 @@
 			
 			if(!defaults.extension || isFlash){
 				isFlash = true;
-				defaults.extension = ".mp3";
+				defaults.extension = defaults.flashExtension;
 			}
 			
 			if(isFlash){
@@ -189,10 +183,10 @@
 		
 		swfLoaded: function(){
 			if(defaults.autoPlay){
-				setTimeout(function(){methods.play(defaults.autoPlay)}, 500);
+				setTimeout(function(){methods.play(defaults.autoPlay);}, 500);
 			}
 		}
-	}
+	};
 	
 	$.fn.ubaPlayer = function(method){
 		if(methods[method]){
@@ -202,6 +196,6 @@
 	    } else {
 			$.error( "Method " +  method + " does not exist on jquery.ubaPlayer" );
 	    }
-	}
+	};
 	
 })(jQuery);
