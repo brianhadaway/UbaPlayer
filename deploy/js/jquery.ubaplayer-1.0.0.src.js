@@ -57,8 +57,6 @@
 				audio.volume = defaults.volume;
 			    audio.src = currentTrack + defaults.extension;
 				audio.play();
-				
-				alert(defaults.volume);
 			}
 		},
 		
