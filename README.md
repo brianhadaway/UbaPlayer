@@ -17,7 +17,7 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
-<script src="jquery.js"></script>
+<script src="libs/jquery/jquery.js"></script>
 <script src="dist/jquery.ubaplayer.min.js"></script>
 <link rel="stylesheet" href="libs/css/styles.css" />
 <script>
