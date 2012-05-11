@@ -9,10 +9,9 @@ UbaPlayer is a simple jQuery plugin that plays audio natively in modern browsers
  * Android 2.2+ (Chrome, Firefox 4, Opera 11)
 
 ## Getting Started
-Download the [production version][min] or the [development version][max].
+Download the [production version][zip].
 
-[min]: https://raw.github.com/brianhadaway/jquery.ubaplayer/master/dist/jquery.ubaplayer.min.js
-[max]: https://raw.github.com/brianhadaway/jquery.ubaplayer/master/dist/jquery.ubaplayer.js
+[zip]: https://github.com/brianhadaway/UbaPlayer/zipball/master
 
 In your web page:
 
