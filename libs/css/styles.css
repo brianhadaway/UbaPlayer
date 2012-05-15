@@ -35,7 +35,8 @@ ul {
 
 .audioButton.loading,
 .audioButton.loading:hover {
-	background-position: 0 -153px;
+	background: url("../img/loading.gif") no-repeat 0 7px;
+	text-indent: 0!important;
 }
 
 #player {
