@@ -8,8 +8,12 @@
         <script src="src/jquery.ubaplayer.js"></script>
         <script>
             $(function(){
-				//basic config
-				$("#ubaPlayer").ubaPlayer({codecs: [{name:"MP3", codec: 'audio/mpeg'}]});
+				$("#ubaPlayer").ubaPlayer({
+				codecs: [{name:"MP3", codec: 'audio/mpeg;'}],
+				swfObjectPath: "http://67.222.22.71/~myt/js/swfobject/swfobject.js",
+				flashAudioPlayerPath: "https://github.com/brianhadaway/UbaPlayer/blob/master/libs/swf/player.swf",
+				//continuous: true
+				});
             });
         </script>
     </head>

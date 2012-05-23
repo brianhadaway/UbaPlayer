@@ -45,6 +45,7 @@
 				if(audio) {
 					_methods.removeListeners(window);
 				}
+				console.log( 'defaults.flashObjectID', defaults.flashObjectID );
 				audio = document.getElementById(defaults.flashObjectID);
 				_methods.addListeners(window);
 				audio.playFlash(currentTrack + defaults.extension);
