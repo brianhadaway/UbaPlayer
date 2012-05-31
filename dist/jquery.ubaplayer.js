@@ -1,4 +1,4 @@
-/*! UbaPlayer - v1.0.1 - 2012-05-09
+/*! UbaPlayer - v1.0.1 - 2012-05-31
 * https://github.com/brianhadaway/UbaPlayer
 * Copyright (c) 2012 Brian Hadaway; Licensed MIT, GPL */
 
@@ -32,7 +32,7 @@
 	methods = {
 		play: function(element){
 			$tgt = element;
-			currentTrack = $tgt.attr("href");
+			currentTrack = _methods.getFileNameWithoutExtension($tgt.attr("href"));
 			isPlaying = true;
 			$tgt.addClass(defaults.loadingClass);
 			$buttons.removeClass(defaults.playingClass);
@@ -41,6 +41,7 @@
 				if(audio) {
 					_methods.removeListeners(window);
 				}
+				console.log( 'defaults.flashObjectID', defaults.flashObjectID );
 				audio = document.getElementById(defaults.flashObjectID);
 				_methods.addListeners(window);
 				audio.playFlash(currentTrack + defaults.extension);
@@ -88,10 +89,15 @@
 	_methods = {
 		init: function( options ){
 			var types;
+
+			//set defaults
 			$.extend(defaults, options);
 			$el = this;
+
+			//listen for clicks on the controls
 			$(".controls").bind("click",function(event){
 				_methods.updateTrackState(event);
+				return false;
 			});
 			$buttons = $("."+defaults.audioButtonClass);
 
@@ -126,7 +132,7 @@
 			if(!$tgt.hasClass("audioButton")){
 				return;
 			}
-			if(!audio || (audio && currentTrack !== $tgt.attr("href"))){
+			if(!audio || (audio && currentTrack !== _methods.getFileNameWithoutExtension($tgt.attr("href")))){
 				methods.play($tgt);
 			} else if(!isPlaying) {
 				methods.resume();
@@ -192,6 +198,15 @@
 			if(defaults.autoPlay){
 				setTimeout(function(){methods.play(defaults.autoPlay);}, 500);
 			}
+		},
+
+		getFileNameWithoutExtension: function(fileName){
+			//this function take a full file name and returns an extensionless file name
+			//ex. entering foo.mp3 returns foo
+			//ex. entering foo returns foo (no change)
+
+			var fileNamePieces = fileName.split('.');
+			return fileNamePieces[0];
 		}
 	};
 
