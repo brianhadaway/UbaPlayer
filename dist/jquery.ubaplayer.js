@@ -1,4 +1,4 @@
-/*! UbaPlayer - v1.0.1 - 2012-05-31
+/*! UbaPlayer - v1.0.1 - 2012-06-06
 * https://github.com/brianhadaway/UbaPlayer
 * Copyright (c) 2012 Brian Hadaway; Licensed MIT, GPL */
 
@@ -205,7 +205,8 @@
 			//ex. entering foo returns foo (no change)
 
 			var fileNamePieces = fileName.split('.');
-			return fileNamePieces[0];
+			fileNamePieces.pop();
+			return fileNamePieces.join(".");
 		}
 	};
 

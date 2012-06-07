@@ -209,7 +209,8 @@
 			//ex. entering foo returns foo (no change)
 
 			var fileNamePieces = fileName.split('.');
-			return fileNamePieces[0];
+			fileNamePieces.pop();
+			return fileNamePieces.join(".");
 		}
 	};
 
