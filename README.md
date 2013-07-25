@@ -61,7 +61,9 @@ In your web page:
 * playerContainer:          "player",
 * playingClass:             "playing",
 * swfobjectPath:            "libs/swfobject/swfobject.js",
-* volume:                   0.5
+* volume:                   0.5,
+* fallbackFunctions:        { play: null, pause: null, resume: null, error: null },
+* fallbackExtension:        ".mid",
 
 ###Linking to Audio Files
 
