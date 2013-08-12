@@ -27,10 +27,13 @@
 		playerContainer: "player",
 		playingClass: "playing",
 		swfobjectPath: "libs/swfobject/swfobject.js",
-		volume: 0.5
+		volume: 0.5,
+		fallbackFunctions: { play: null, pause: null, resume: null, error: null },
+		fallbackExtension: '.mid'
 	},
 		currentTrack, isPlaying = false,
 		isFlash = false,
+		isFallback = false,
 		audio, $buttons, $tgt, $el, playTrack, resumeTrack, pauseTrack, methods = {
 			play: function(element) {
 				$tgt = element;
@@ -39,7 +42,12 @@
 				$tgt.addClass(defaults.loadingClass);
 				$buttons.removeClass(defaults.playingClass);
 
-				if (isFlash) {
+				if (isFallback) {
+					if (typeof defaults.fallbackFunctions.play == "function") {
+						defaults.fallbackFunctions.play(currentTrack + defaults.fallbackExtension);
+					}
+				}
+				else if (isFlash) {
 					if (audio) {
 						_methods.removeListeners(window);
 					}
@@ -62,7 +70,12 @@
 			},
 
 			pause: function() {
-				if (isFlash) {
+				if (isFallback) {
+					if (typeof defaults.fallbackFunctions.pause == "function") {
+						defaults.fallbackFunctions.pause();
+					}
+				}
+				else if (isFlash) {
 					audio.pauseFlash();
 				} else {
 					audio.pause();
@@ -73,7 +86,12 @@
 			},
 
 			resume: function() {
-				if (isFlash) {
+				if (isFallback) {
+					if (typeof defaults.fallbackFunctions.resume == "function") {
+						defaults.fallbackFunctions.resume();
+					}
+				}
+				else if (isFlash) {
 					audio.playFlash();
 				} else {
 					audio.play();
@@ -201,7 +219,16 @@
 				}
 			},
 
-			swfLoaded: function() {
+			swfLoaded: function(e) {
+				if (!e.success) {
+					isFlash = false;
+					isFallback = true;
+
+					if (typeof defaults.fallbackFunctions.error == "function") {
+						defaults.fallbackFunctions.error();
+					}
+				}
+
 				if (defaults.autoPlay) {
 					setTimeout(function() {
 						methods.play(defaults.autoPlay);
