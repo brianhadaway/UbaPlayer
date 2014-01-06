@@ -1,36 +1,33 @@
 {
-  "name": "jquery.ubaplayer",
-  "title": "UbaPlayer",
-  "description": "The jQuery HTML5 Audio Player with Flash Fallback.",
-  "version": "1.0.1",
-  "homepage": "https://github.com/brianhadaway/UbaPlayer",
-  "author": {
-    "name": "Brian Hadaway",
-    "email": "brianhadaway@gmail.com",
-    "url": "http://www.brianhadaway.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brianhadaway/UbaPlayer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/brianhadaway/UbaPlayer/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/brianhadaway/UbaPlayer/blob/master/LICENSE-MIT"
+    "name": "jquery.ubaplayer",
+    "title": "UbaPlayer",
+    "description": "The jQuery HTML5 Audio Player with Flash Fallback.",
+    "version": "1.0.2",
+    "homepage": "https://github.com/brianhadaway/UbaPlayer",
+    "author": {
+        "name": "Brian Hadaway",
+        "email": "brianhadaway@gmail.com",
+        "url": "http://www.brianhadaway.com"
     },
-    {
-      "type": "GPL",
-      "url": "https://github.com/brianhadaway/UbaPlayer/blob/master/LICENSE-GPL"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brianhadaway/UbaPlayer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/brianhadaway/UbaPlayer/issues"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/brianhadaway/UbaPlayer/blob/master/LICENSE-MIT"
+    },
+    "dependencies": {},
+    "keywords": [],
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-uglify": "~0.2.7",
+        "grunt-contrib-qunit": "~0.3.0",
+        "grunt-contrib-watch": "~0.5.3"
     }
-  ],
-  "dependencies": {
-    "jquery": "1.7"
-  },
-  "keywords": [],
-  "devDependencies": {
-    "grunt": "~0.4.1"
-  }
 }
