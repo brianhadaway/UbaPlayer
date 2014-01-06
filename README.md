@@ -40,7 +40,7 @@ In your web page:
     <li><a class="audioButton" href="libs/media/ThatsGood.mp3">That's Good</a></li>
     <li><a class="audioButton" href="libs/media/Tomorrow.mp3">Tomorrow</a></li>
     <li><a class="audioButton" href="libs/media/Well.mp3">Well</a></li>
-    <li><a class="audioButton" href="libs/media/What.mp3">What?!?</a></li> 
+    <li><a class="audioButton" href="libs/media/What.mp3">What?!?</a></li>
 </ul>
 ```
 
@@ -67,7 +67,7 @@ In your web page:
 
 ###Linking to Audio Files
 
-In previous versions of UbaPlayer you had to link to a non existant versions of the audio files. Now, you can link to an existing audio file and UbaPlayer will _automagically_ figure out which version your browser should play. This isn't required but we recommend doing so to keep your HTML semantic and to follow the principles of progressive enhancement. 
+In previous versions of UbaPlayer you had to link to a non existant versions of the audio files. Now, you can link to an existing audio file and UbaPlayer will _automagically_ figure out which version your browser should play. This isn't required but we recommend doing so to keep your HTML semantic and to follow the principles of progressive enhancement.
 
 ```html
 <ul class="controls">
@@ -84,8 +84,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "src" subdirectory!_
 
 ## Release History
-_(Nothing yet)_
+[Release History](https://github.com/brianhadaway/UbaPlayer/releases)
 
 ## License
-Copyright (c) 2012 Brian Hadaway  
-Licensed under the MIT, GPL licenses.
+Copyright (c) 2014 Brian Hadaway
+Licensed under the MIT licenses.
