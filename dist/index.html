@@ -6,29 +6,29 @@
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <div id="ubaPlayer"></div>
+        <div id="ubaplayer"></div>
         <h2>ubaPlayer | One-Button HTML5 Audio Player with Flash Fallback</h2>
-        <ul class="controls">
-            <li><a class="audioButton" href="media/FiftyYears.mp3">Fifty Years</a></li>
-            <li><a class="audioButton" href="media/AwMan.mp3">Aw Man</a></li>
-            <li><a class="audioButton" href="media/ItsAThang.mp3">It's a Thang...</a></li>
-            <li><a class="audioButton" href="media/ItsCool.mp3">It's Cool</a></li>
-            <li><a class="audioButton" href="media/ItWasAGoodThang.mp3">It Was a Good Thang</a></li>
-            <li><a class="audioButton" href="media/Laugh.mp3">Laugh</a></li>
-            <li><a class="audioButton" href="media/MmmHmm.mp3">Mmm Hmm</a></li>
-            <li><a class="audioButton" href="media/MmmHmmLow.mp3">Mmm Hmm (Low)</a></li>
-            <li><a class="audioButton" href="media/Naw.mp3">Naw</a></li>
-            <li><a class="audioButton" href="media/ThatsGood.mp3">That's Good</a></li>
-            <li><a class="audioButton" href="media/Tomorrow.mp3">Tomorrow</a></li>
-            <li><a class="audioButton" href="media/Well.mp3">Well</a></li>
-            <li><a class="audioButton" href="media/What.mp3">What?!?</a></li>
+        <ul class="ubaplayer-controls">
+            <li><a class="ubaplayer-button" href="media/FiftyYears.mp3">Fifty Years</a></li>
+            <li><a class="ubaplayer-button" href="media/AwMan.mp3">Aw Man</a></li>
+            <li><a class="ubaplayer-button" href="media/ItsAThang.mp3">It's a Thang...</a></li>
+            <li><a class="ubaplayer-button" href="media/ItsCool.mp3">It's Cool</a></li>
+            <li><a class="ubaplayer-button" href="media/ItWasAGoodThang.mp3">It Was a Good Thang</a></li>
+            <li><a class="ubaplayer-button" href="media/Laugh.mp3">Laugh</a></li>
+            <li><a class="ubaplayer-button" href="media/MmmHmm.mp3">Mmm Hmm</a></li>
+            <li><a class="ubaplayer-button" href="media/MmmHmmLow.mp3">Mmm Hmm (Low)</a></li>
+            <li><a class="ubaplayer-button" href="media/Naw.mp3">Naw</a></li>
+            <li><a class="ubaplayer-button" href="media/ThatsGood.mp3">That's Good</a></li>
+            <li><a class="ubaplayer-button" href="media/Tomorrow.mp3">Tomorrow</a></li>
+            <li><a class="ubaplayer-button" href="media/Well.mp3">Well</a></li>
+            <li><a class="ubaplayer-button" href="media/What.mp3">What?!?</a></li>
         </ul>
         <script src="//localhost:35729/livereload.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.ubaplayer.js"></script>
         <script>
             $(function(){
-                $("#ubaPlayer").ubaPlayer({
+                $("#ubaplayer").ubaPlayer({
                 codecs: [{name:"MP3", codec: 'audio/mpeg;'}]
                 });
             });

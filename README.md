@@ -8,6 +8,11 @@ UbaPlayer is a simple jQuery plugin that plays audio natively in modern browsers
  * iOS 3+ (Safari Mobile)
  * Android 2.2+ (Chrome, Firefox 4, Opera 11)
 
+##New in version 2
+*Namespaced CSS classes - All CSS classes are prefixed with 'ubaplayer-' to avoid conflicts with other styles.
+*Retina Button Images - Play/Pause buttons look better on high pixel density devices.
+*NoConflict Support - The plugin follows a more common pattern that allows the use of jQuery.noConflict()
+
 ## Getting Started
 Download the [production version][zip].
 
@@ -16,31 +21,20 @@ Download the [production version][zip].
 In your web page:
 
 ```html
-<script src="libs/jquery/jquery.js"></script>
-<script src="dist/jquery.ubaplayer.min.js"></script>
-<link rel="stylesheet" href="libs/css/styles.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.ubaplayer.min.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
 <script>
     $(function(){
 		//basic config
-		$("#ubaPlayer").ubaPlayer();
+		$("#ubaplayer").ubaPlayer();
     });
 </script>
 
-<div id="ubaPlayer"></div>
-<ul class="controls">
-    <li><a class="audioButton" href="libs/media/FiftyYears.mp3">Fifty Years</a></li>
-    <li><a class="audioButton" href="libs/media/AwMan.mp3">Aw Man</a></li>
-    <li><a class="audioButton" href="libs/media/ItsAThang.mp3">It's a Thang...</a></li>
-    <li><a class="audioButton" href="libs/media/ItsCool.mp3">It's Cool</a></li>
-    <li><a class="audioButton" href="libs/media/ItWasAGoodThang.mp3">It Was a Good Thang</a></li>
-    <li><a class="audioButton" href="libs/media/Laugh.mp3">Laugh</a></li>
-    <li><a class="audioButton" href="libs/media/MmmHmm.mp3">Mmm Hmm</a></li>
-    <li><a class="audioButton" href="libs/media/MmmHmmLow.mp3">Mmm Hmm (Low)</a></li>
-    <li><a class="audioButton" href="libs/media/Naw.mp3">Naw</a></li>
-    <li><a class="audioButton" href="libs/media/ThatsGood.mp3">That's Good</a></li>
-    <li><a class="audioButton" href="libs/media/Tomorrow.mp3">Tomorrow</a></li>
-    <li><a class="audioButton" href="libs/media/Well.mp3">Well</a></li>
-    <li><a class="audioButton" href="libs/media/What.mp3">What?!?</a></li>
+<div id="ubaplayer"></div>
+<ul class="ubaplayer-controls">
+    <li><a class="ubaplayer-button" href="media/FiftyYears.mp3">Fifty Years</a></li>
+    <li><a class="ubaplayer-button" href="media/AwMan.mp3">Aw Man</a></li>
 </ul>
 ```
 
@@ -53,14 +47,14 @@ In your web page:
 * codecs:                   [{name:"OGG", codec: 'audio/ogg; codecs="vorbis"'}, {name:"MP3", codec: 'audio/mpeg'}],
 * continuous:               false,
 * extension:                null,
-* flashAudioPlayerPath:     "libs/swf/player.swf",
+* flashAudioPlayerPath:     "swf/player.swf",
 * flashExtension:           ".mp3",
 * flashObjectID:            "audioPlayer",
 * loadingClass:             "loading",
 * loop:                     false,
 * playerContainer:          "player",
 * playingClass:             "playing",
-* swfobjectPath:            "libs/swfobject/swfobject.js",
+* swfobjectPath:            "js/swfobject.js",
 * volume:                   0.5,
 * fallbackFunctions:        { play: null, pause: null, resume: null, error: null },
 * fallbackExtension:        ".mid",
@@ -70,8 +64,8 @@ In your web page:
 In previous versions of UbaPlayer you had to link to a non existant versions of the audio files. Now, you can link to an existing audio file and UbaPlayer will _automagically_ figure out which version your browser should play. This isn't required but we recommend doing so to keep your HTML semantic and to follow the principles of progressive enhancement.
 
 ```html
-<ul class="controls">
-    <li><a class="audioButton" href="libs/media/foo.mp3">Foo</a></li>
+<ul class="ubaplayer-controls">
+    <li><a class="ubaplayer-b" href="media/foo.mp3">Foo</a></li>
 </ul>
 ```
 
@@ -88,4 +82,4 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 
 ## License
 Copyright (c) 2014 Brian Hadaway
-Licensed under the MIT licenses.
+Licensed under the MIT license.

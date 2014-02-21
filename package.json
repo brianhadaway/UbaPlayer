@@ -2,7 +2,7 @@
     "name": "jquery.ubaplayer",
     "title": "UbaPlayer",
     "description": "The jQuery HTML5 Audio Player with Flash Fallback.",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "homepage": "https://github.com/brianhadaway/UbaPlayer",
     "author": {
         "name": "Brian Hadaway",

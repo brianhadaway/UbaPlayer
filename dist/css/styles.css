@@ -1,5 +1,5 @@
 body {
-	font: 12px normal Helvetica, Arial, sans-serif;
+	font: 14px normal Helvetica, Arial, sans-serif;
 	margin: 0 10px;
 }
 
@@ -13,33 +13,59 @@ ul {
 	display: none;
 }
 
-.audioButton {
+.ubaplayer-button {
 	background: url("../img/btn.png") no-repeat 0 7px;
 	display: block;
 	cursor: pointer;
 	margin: 0;
 	padding: 10px 10px 10px 25px;
+	position: relative;
 	width: 200px;
 }
 
-.audioButton:hover {
+.ubaplayer-button:hover {
 	background-position: 0 -33px;
 }
 
-.audioButton.playing {
+.ubaplayer-button.playing {
 	background-position: 0 -73px;
 }
 
-.audioButton.playing:hover {
+.ubaplayer-button.playing:hover {
 	background-position: 0 -113px;
 }
 
-.audioButton.loading,
-.audioButton.loading:hover {
+.ubaplayer-button.loading:after,
+.ubaplayer-button.loading:hover:after {
 	background: url("../img/loading.gif") no-repeat 0 7px;
+	content: " ";
+	height: 28px;
+	left: 0;
+	position: absolute;
 	text-indent: 0!important;
+	top: 0;
+	width: 20px;
 }
 
-#player {
+#ubaplayer {
 	display: none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)  {
+	.ubaplayer-button {
+		background-position: 0px -70px;
+		background-size: 20px 250px;
+	}
+
+	.ubaplayer-button:hover {
+		background-position: 0 -107px;
+	}
+
+	.ubaplayer-button.playing {
+		background-position: 0 -144px;
+	}
+
+	.ubaplayer-button.playing:hover {
+		background-position: 0 -180px;
+	}
 }
