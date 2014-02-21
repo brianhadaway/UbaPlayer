@@ -9,9 +9,9 @@ UbaPlayer is a simple jQuery plugin that plays audio natively in modern browsers
  * Android 2.2+ (Chrome, Firefox 4, Opera 11)
 
 ##New in version 2
-*Namespaced CSS classes - All CSS classes are prefixed with 'ubaplayer-' to avoid conflicts with other styles.
-*Retina Button Images - Play/Pause buttons look better on high pixel density devices.
-*NoConflict Support - The plugin follows a more common pattern that allows the use of jQuery.noConflict()
+ * Namespaced CSS classes - All CSS classes are prefixed with 'ubaplayer-' to avoid conflicts with other styles.
+ * Retina Button Images - Play/Pause buttons look better on high pixel density devices.
+ * NoConflict Support - The plugin follows a more common pattern that allows the use of jQuery.noConflict()
 
 ## Getting Started
 Download the [production version][zip].
