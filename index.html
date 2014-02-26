@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="ubaplayer" class="anchor" href="#ubaplayer"><span class="octicon octicon-link"></span></a>UbaPlayer</h1>
+<a name="ubaplayer-201" class="anchor" href="#ubaplayer-201"><span class="octicon octicon-link"></span></a>UbaPlayer 2.0.1</h1>
 
 <p>The jQuery HTML5 Audio Player with Flash Fallback.</p>
 
@@ -44,34 +44,29 @@
 <li>iOS 3+ (Safari Mobile)</li>
 <li>Android 2.2+ (Chrome, Firefox 4, Opera 11)</li>
 </ul><h2>
-<a name="new-in-version-2" class="anchor" href="#new-in-version-2"><span class="octicon octicon-link"></span></a>New in version 2</h2>
-
-<ul>
-<li>Namespaced CSS classes - All CSS classes are prefixed with 'ubaplayer-' to avoid conflicts with other styles.</li>
-<li>Retina Button Images - Play/Pause buttons look better on high pixel density devices.</li>
-<li>NoConflict Support - The plugin follows a more common pattern that allows the use of jQuery.noConflict()</li>
-</ul><h2>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>Download the <a href="https://github.com/brianhadaway/UbaPlayer/zipball/master">production version</a>.</p>
 
 <p>In your web page:</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jquery.ubaplayer.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- in the head tag --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/styles.css"</span> <span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- somewhere in the body tag --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"ubaplayer"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ubaplayer-controls"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"ubaplayer-button"</span> <span class="na">href=</span><span class="s">"media/foo.mp3"</span><span class="nt">&gt;</span>Foo<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- near closing body tag --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jquery.ubaplayer.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="c1">//basic config</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">"#ubaplayer"</span><span class="p">).</span><span class="nx">ubaPlayer</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"ubaplayer"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ubaplayer-controls"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"ubaplayer-button"</span> <span class="na">href=</span><span class="s">"media/FiftyYears.mp3"</span><span class="nt">&gt;</span>Fifty Years<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"ubaplayer-button"</span> <span class="na">href=</span><span class="s">"media/AwMan.mp3"</span><span class="nt">&gt;</span>Aw Man<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
 </pre></div>
 
 <h2>
@@ -81,43 +76,29 @@
 <a name="configuration-options--their-defaults" class="anchor" href="#configuration-options--their-defaults"><span class="octicon octicon-link"></span></a>Configuration Options &amp; Their Defaults</h3>
 
 <ul>
-<li>audioButtonClass:         "audioButton",</li>
+<li>audioButtonClass:         'ubaplayer-button',</li>
 <li>autoPlay:                 null,</li>
 <li>codecs:                   [{name:"OGG", codec: 'audio/ogg; codecs="vorbis"'}, {name:"MP3", codec: 'audio/mpeg'}],</li>
 <li>continuous:               false,</li>
+<li>controlsClass:            'ubaplayer-controls',</li>
 <li>extension:                null,</li>
-<li>flashAudioPlayerPath:     "swf/player.swf",</li>
-<li>flashExtension:           ".mp3",</li>
-<li>flashObjectID:            "audioPlayer",</li>
-<li>loadingClass:             "loading",</li>
-<li>loop:                     false,</li>
-<li>playerContainer:          "player",</li>
-<li>playingClass:             "playing",</li>
-<li>swfobjectPath:            "js/swfobject.js",</li>
-<li>volume:                   0.5,</li>
+<li>fallbackExtension:        '.mp3',</li>
 <li>fallbackFunctions:        { play: null, pause: null, resume: null, error: null },</li>
-<li>fallbackExtension:        ".mid",</li>
-</ul><h3>
-<a name="linking-to-audio-files" class="anchor" href="#linking-to-audio-files"><span class="octicon octicon-link"></span></a>Linking to Audio Files</h3>
-
-<p>In previous versions of UbaPlayer you had to link to a non existant versions of the audio files. Now, you can link to an existing audio file and UbaPlayer will <em>automagically</em> figure out which version your browser should play. This isn't required but we recommend doing so to keep your HTML semantic and to follow the principles of progressive enhancement.</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ubaplayer-controls"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"ubaplayer-b"</span> <span class="na">href=</span><span class="s">"media/foo.mp3"</span><span class="nt">&gt;</span>Foo<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre></div>
-
-<h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
-
-<p><em>(Coming soon)</em></p>
-
-<h2>
+<li>flashAudioPlayerPath:     'swf/player.swf',</li>
+<li>flashExtension:           '.mp3',</li>
+<li>flashObjectID:            'ubaplayer-flash',</li>
+<li>loadingClass:             'ubaplayer-loading',</li>
+<li>loop:                     false,</li>
+<li>playerContainer:          "ubaplayer-container",</li>
+<li>playingClass:             "ubaplayer-playing",</li>
+<li>swfobjectPath:            "js/swfobject.js",</li>
+<li>volume:                   0.5</li>
+</ul><h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
-<p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="https://github.com/cowboy/grunt">grunt</a>.</p>
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style.</p>
 
-<p><em>Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "src" subdirectory!</em></p>
+<p><em>Also, please don't edit JS files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "src" subdirectory!</em></p>
 
 <h2>
 <a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
