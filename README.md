@@ -1,4 +1,4 @@
-# UbaPlayer 2.0.0
+# UbaPlayer 2.0.1
 
 The jQuery HTML5 Audio Player with Flash Fallback.
 
