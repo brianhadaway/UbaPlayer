@@ -9,7 +9,7 @@ ul {
 	padding: 0;
 }
 
-#fallback {
+#ubaplayer-fallback {
 	display: none;
 }
 
@@ -27,16 +27,16 @@ ul {
 	background-position: 0 -33px;
 }
 
-.ubaplayer-button.playing {
+.ubaplayer-button.ubaplayer-playing {
 	background-position: 0 -73px;
 }
 
-.ubaplayer-button.playing:hover {
+.ubaplayer-button.ubaplayer-playing:hover {
 	background-position: 0 -113px;
 }
 
-.ubaplayer-button.loading:after,
-.ubaplayer-button.loading:hover:after {
+.ubaplayer-button.ubaplayer-loading:after,
+.ubaplayer-button.ubaplayer-loading:hover:after {
 	background: url("../img/loading.gif") no-repeat 0 7px;
 	content: " ";
 	height: 28px;

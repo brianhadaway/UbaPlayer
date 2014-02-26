@@ -1,4 +1,4 @@
-/*! UbaPlayer - v2.0.0 -  * https://github.com/brianhadaway/UbaPlayer
+/*! UbaPlayer - v2.0.1 -  * https://brianhadaway.github.io/UbaPlayer
  * Copyright (c)  2014  Brian Hadaway; Licensed MIT */(function($, window, document, undefined) {
     var UbaPlayer = function(elem, options) {
         this.$elem = $(elem);
@@ -30,10 +30,10 @@
             flashAudioPlayerPath: 'swf/player.swf',
             flashExtension: '.mp3',
             flashObjectID: 'ubaplayer-flash',
-            loadingClass: 'loading',
+            loadingClass: 'ubaplayer-loading',
             loop: false,
-            playerContainer: 'ubaplayer',
-            playingClass: 'playing',
+            playerContainer: 'ubaplayer-container',
+            playingClass: 'ubaplayer-playing',
             swfobjectPath: 'js/swfobject.js',
             volume: 0.5,
         },
