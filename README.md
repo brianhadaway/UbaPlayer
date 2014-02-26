@@ -16,6 +16,10 @@ Download the [production version][zip].
 In your web page:
 
 ```html
+<!-- in the head tag -->
+<link rel="stylesheet" href="css/styles.css" />
+
+<!-- somewhere in the body tag -->
 <div id="ubaplayer"></div>
 <ul class="ubaplayer-controls">
     <li><a class="ubaplayer-button" href="media/foo.mp3">Foo</a></li>
@@ -24,7 +28,6 @@ In your web page:
 <!-- near closing body tag -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.ubaplayer.min.js"></script>
-<link rel="stylesheet" href="css/styles.css" />
 <script>
     $(function(){
         $("#ubaplayer").ubaPlayer();
