@@ -1,4 +1,4 @@
-/*! UbaPlayer - v2.0.1 -  * https://brianhadaway.github.io/UbaPlayer
+/*! UbaPlayer - v2.0.2 -  * https://brianhadaway.github.io/UbaPlayer
  * Copyright (c)  2014  Brian Hadaway; Licensed MIT */(function($, window, document, undefined) {
     var UbaPlayer = function(elem, options) {
         this.$elem = $(elem);
@@ -104,7 +104,7 @@
         },
 
         play: function(element) {
-            this.$tgt = element;
+            this.$tgt = typeof element === 'undefined' ? $('.' + this.options.audioButtonClass).eq(0) : element;
             this.currentTrack = this.getFileNameWithoutExtension(this.$tgt.attr("href"));
             this.isPlaying = true;
             this.$tgt.addClass(this.options.loadingClass);

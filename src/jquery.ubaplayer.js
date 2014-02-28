@@ -103,7 +103,7 @@
         },
 
         play: function(element) {
-            this.$tgt = element;
+            this.$tgt = typeof element === 'undefined' ? $('.' + this.options.audioButtonClass).eq(0) : element;
             this.currentTrack = this.getFileNameWithoutExtension(this.$tgt.attr("href"));
             this.isPlaying = true;
             this.$tgt.addClass(this.options.loadingClass);
