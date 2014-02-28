@@ -97,25 +97,37 @@
 <h3>
 <a name="configuration-options--their-defaults" class="anchor" href="#configuration-options--their-defaults"><span class="octicon octicon-link"></span></a>Configuration Options &amp; Their Defaults</h3>
 
-<ul>
-<li>audioButtonClass:         'ubaplayer-button',</li>
-<li>autoPlay:                 null,</li>
-<li>codecs:                   [{name:"OGG", codec: 'audio/ogg; codecs="vorbis"'}, {name:"MP3", codec: 'audio/mpeg'}],</li>
-<li>continuous:               false,</li>
-<li>controlsClass:            'ubaplayer-controls',</li>
-<li>extension:                null,</li>
-<li>fallbackExtension:        '.mp3',</li>
-<li>fallbackFunctions:        { play: null, pause: null, resume: null, error: null },</li>
-<li>flashAudioPlayerPath:     'swf/player.swf',</li>
-<li>flashExtension:           '.mp3',</li>
-<li>flashObjectID:            'ubaplayer-flash',</li>
-<li>loadingClass:             'ubaplayer-loading',</li>
-<li>loop:                     false,</li>
-<li>playerContainer:          "ubaplayer-container",</li>
-<li>playingClass:             "ubaplayer-playing",</li>
-<li>swfobjectPath:            "js/swfobject.js",</li>
-<li>volume:                   0.5</li>
-</ul><h2>
+<div class="highlight highlight-javascript"><pre><span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">audioButtonClass</span><span class="o">:</span> <span class="s1">'ubaplayer-button'</span><span class="p">,</span>
+    <span class="nx">autoPlay</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nx">codecs</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">'OGG'</span><span class="p">,</span>
+        <span class="nx">codec</span><span class="o">:</span> <span class="s1">'audio/ogg; codecs="vorbis"'</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">'MP3'</span><span class="p">,</span>
+        <span class="nx">codec</span><span class="o">:</span> <span class="s1">'audio/mpeg'</span>
+    <span class="p">}],</span>
+    <span class="nx">continuous</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">controlsClass</span><span class="o">:</span> <span class="s1">'ubaplayer-controls'</span><span class="p">,</span>
+    <span class="nx">extension</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nx">fallbackExtension</span><span class="o">:</span> <span class="s1">'.mp3'</span><span class="p">,</span>
+    <span class="nx">fallbackFunctions</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">error</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">pause</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">play</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">resume</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">},</span>
+    <span class="nx">flashAudioPlayerPath</span><span class="o">:</span> <span class="s1">'swf/player.swf'</span><span class="p">,</span>
+    <span class="nx">flashExtension</span><span class="o">:</span> <span class="s1">'.mp3'</span><span class="p">,</span>
+    <span class="nx">flashObjectID</span><span class="o">:</span> <span class="s1">'ubaplayer-flash'</span><span class="p">,</span>
+    <span class="nx">loadingClass</span><span class="o">:</span> <span class="s1">'ubaplayer-loading'</span><span class="p">,</span>
+    <span class="nx">loop</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">playerContainer</span><span class="o">:</span> <span class="s1">'ubaplayer-container'</span><span class="p">,</span>
+    <span class="nx">playingClass</span><span class="o">:</span> <span class="s1">'ubaplayer-playing'</span><span class="p">,</span>
+    <span class="nx">swfobjectPath</span><span class="o">:</span> <span class="s1">'js/swfobject.js'</span><span class="p">,</span>
+    <span class="nx">volume</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div><h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>In lieu of a formal styleguide, take care to maintain the existing coding style.</p>
