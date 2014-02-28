@@ -7,8 +7,9 @@
     <meta name="description" content="Ubaplayer : The jQuery HTML5 Audio Player with Flash Fallback" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/jquery.ubaplayer.css" />
 
-    <title>Ubaplayer</title>
+    <title>UbaPlayer</title>
   </head>
 
   <body>
@@ -18,7 +19,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/brianhadaway/UbaPlayer">View on GitHub</a>
 
-          <h1 id="project_title">Ubaplayer</h1>
+          <h1 id="project_title">UbaPlayer</h1>
           <h2 id="project_tagline">The jQuery HTML5 Audio Player with Flash Fallback</h2>
 
             <section id="downloads">
@@ -43,7 +44,36 @@
 <li>PC (Chrome 10+, Safari 4+, Firefox3.5+, Opera, IE6+)</li>
 <li>iOS 3+ (Safari Mobile)</li>
 <li>Android 2.2+ (Chrome, Firefox 4, Opera 11)</li>
-</ul><h2>
+</ul>
+
+<h2>Demo</h2>
+<div id="ubaplayer"></div>
+<ul class="ubaplayer-controls">
+    <li><a class="ubaplayer-button" href="media/FiftyYears.mp3">Fifty Years</a></li>
+    <li><a class="ubaplayer-button" href="media/AwMan.mp3">Aw Man</a></li>
+    <li><a class="ubaplayer-button" href="media/ItsAThang.mp3">It's a Thang...</a></li>
+    <li><a class="ubaplayer-button" href="media/ItsCool.mp3">It's Cool</a></li>
+    <li><a class="ubaplayer-button" href="media/ItWasAGoodThang.mp3">It Was a Good Thang</a></li>
+    <li><a class="ubaplayer-button" href="media/Laugh.mp3">Laugh</a></li>
+    <li><a class="ubaplayer-button" href="media/MmmHmm.mp3">Mmm Hmm</a></li>
+    <li><a class="ubaplayer-button" href="media/MmmHmmLow.mp3">Mmm Hmm (Low)</a></li>
+    <li><a class="ubaplayer-button" href="media/Naw.mp3">Naw</a></li>
+    <li><a class="ubaplayer-button" href="media/ThatsGood.mp3">That's Good</a></li>
+    <li><a class="ubaplayer-button" href="media/Tomorrow.mp3">Tomorrow</a></li>
+    <li><a class="ubaplayer-button" href="media/Well.mp3">Well</a></li>
+    <li><a class="ubaplayer-button" href="media/What.mp3">What?!?</a></li>
+</ul>
+
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/jquery.ubaplayer.min.js"></script>
+<script>
+    $(function(){
+        $("#ubaplayer").ubaPlayer({swfobjectPath: 'javascripts/swfobject.js',});
+    });
+</script>
+
+
+<h2>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>Download the <a href="https://github.com/brianhadaway/UbaPlayer/zipball/master">production version</a>.</p>
