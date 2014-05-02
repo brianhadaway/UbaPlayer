@@ -25,7 +25,7 @@
 }
 ],
 "dependencies": {
-"jquery": "~1.8"
+"jquery": ">=1.8"
 },
 "docs": "https://github.com/brianhadaway/UbaPlayer/blob/master/README.md",
 "demo": "http://brianhadaway.github.io/UbaPlayer/"
