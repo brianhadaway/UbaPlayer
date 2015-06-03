@@ -1,6 +1,6 @@
 {
     "name": "ubaplayer",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "homepage": "http://brianhadaway.github.io/UbaPlayer",
     "authors": [
         "Brian Hadaway <brianhadaway@gmail.com>"
@@ -15,7 +15,6 @@
     ],
     "license": "MIT",
     "ignore": [
-        "**/.*",
         "node_modules",
         "bower_components",
         "test",
