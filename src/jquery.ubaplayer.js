@@ -35,6 +35,7 @@
             playingClass: 'ubaplayer-playing',
             swfobjectPath: 'js/swfobject.js',
             volume: 0.5,
+            shuffle: false
         },
 
         isPlaying: false,
@@ -200,6 +201,7 @@
         onEnded: function() {
             this.isPlaying = false;
             this.$tgt.removeClass(this.options.playingClass);
+            this.$tgt.addClass("ended");
             this.currentTrack = "";
             if (this.isFlash) {
                 this.removeListeners(window);
@@ -208,8 +210,31 @@
             }
 
             if (this.options.continuous) {
-                var $next = this.$tgt.next().length ? this.$tgt.next() : $(this.options.audioButtonClass).eq(0);
+                //shuffle
+                if (this.options.shuffle)
+                {
+
+                    var numberoftracks = $('.' + this.options.audioButtonClass+':not(.ended)').length;
+                    if (numberoftracks > 0){
+
+                        var randomtrack = Math.floor((Math.random() * numberoftracks) + 0);
+                        var $next =  $('.' + this.options.audioButtonClass+':not(.ended)').eq(randomtrack);
+
+                        if (this.options.loop && numberoftracks == 1)
+                        {
+                            $('.' + this.options.audioButtonClass+' .ended').removeClass('ended');
+                        }
+
+                        this.play($next);
+
+                    }
+
+                }else{
+                    var $next = this.$tgt.next().length ? this.$tgt.next() : $(this.options.audioButtonClass).eq(0);
                 this.play($next);
+
+                }
+
             }
 
         },
