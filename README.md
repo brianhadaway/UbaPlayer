@@ -69,6 +69,7 @@ defaults: {
     playingClass: 'ubaplayer-playing',
     swfobjectPath: 'js/swfobject.js',
     volume: 0.5,
+    shuffle:false
 }
 ```
 
