@@ -1,5 +1,5 @@
-/*! UbaPlayer - v2.0.2 -  * https://brianhadaway.github.io/UbaPlayer
- * Copyright (c)  2014  Brian Hadaway; Licensed MIT */(function($, window, document, undefined) {
+/*! UbaPlayer - v2.0.5 -  * https://brianhadaway.github.io/UbaPlayer
+ * Copyright (c)  2015  Brian Hadaway; Licensed MIT */(function($, window, document, undefined) {
     var UbaPlayer = function(elem, options) {
         this.$elem = $(elem);
         this.$elem.data('instance', this);
@@ -29,13 +29,13 @@
             },
             flashAudioPlayerPath: 'swf/player.swf',
             flashExtension: '.mp3',
-            flashObjectID: 'ubaplayer-flash',
+            flashObjectID: 'ubaplayerflash',
             loadingClass: 'ubaplayer-loading',
             loop: false,
             playerContainer: 'ubaplayer-container',
             playingClass: 'ubaplayer-playing',
             swfobjectPath: 'js/swfobject.js',
-            volume: 0.5,
+            volume: 0.5
         },
 
         isPlaying: false,
@@ -51,12 +51,21 @@
             this.loadProxy = $.proxy(this.onLoaded, this);
             this.errorProxy = $.proxy(this.onError, this);
             this.endProxy = $.proxy(this.onEnded, this);
+            this.progressProxy = $.proxy(this.onProgress, this);
             this.$buttons = $("." + this.options.audioButtonClass);
 
             ilen = this.options.codecs.length;
 
             //listen for clicks on the controls
-            $("." + this.options.controlsClass).on("click", function(event) {
+            $("." + this.options.controlsClass).on("touchend click", "."+this.options.audioButtonClass, function(event) {
+                if(!scope.unbound){
+                    if(event.type == "touchend"){
+                        $("." + scope.options.controlsClass).off("click");
+                        scope.unbound = true;
+                        console.log('unbound', event.type);
+                    }
+                }
+                event.preventDefault();
                 scope.updateTrackState(event);
                 return false;
             });
@@ -75,12 +84,8 @@
             }
 
             if (this.isFlash) {
-                this.$elem.html("<div id='" + this.options.playerContainer + "'/>");
-                $.getScript(this.options.swfobjectPath, $.proxy(function() {
-                    swfobject.embedSWF(this.options.flashAudioPlayerPath, this.options.playerContainer, "0", "0", "9.0.0", "swf/expressInstall.swf", false, false, {
-                        id: this.options.flashObjectID
-                    }, $.proxy(this.swfLoaded, this));
-                }, this));
+                this.$elem.html("<div id='" + this.options.playerContainer + "'></div>");
+                swfobject.embedSWF(this.options.flashAudioPlayerPath, this.options.playerContainer, "0", "0", "9.0.0", false, false, { AllowScriptAccess: "always" }, {id: this.options.flashObjectID, name: this.options.flashObjectID}, $.proxy(this.swfLoaded, this));
             } else {
                 if (this.options.autoPlay) {
                     this.play(this.options.autoPlay);
@@ -118,13 +123,13 @@
                 if (this.audio) {
                     this.removeListeners(window);
                 }
-                this.audio = document.getElementById(this.options.flashObjectID);
+                this.audio = swfobject.getObjectById(this.options.flashObjectID);
                 this.addListeners(window);
                 this.audio.playFlash(this.currentTrack + this.options.extension);
             } else {
                 if (this.audio) {
-                    this.audio.pause();
                     this.removeListeners(this.audio);
+                    this.audio.pause();
                 }
                 this.audio = new Audio("");
                 this.addListeners(this.audio);
@@ -173,6 +178,7 @@
             el.on('canplay', this.loadProxy);
             el.on('error', this.errorProxy);
             el.on('ended', this.endProxy);
+            el.on('timeupdate', this.progressProxy);
         },
 
         removeListeners: function(elem) {
@@ -180,6 +186,7 @@
             el.off('canplay', this.loadProxy);
             el.off('error', this.errorProxy);
             el.off('ended', this.endProxy);
+            el.on('timeupdate', this.progressProxy);
         },
 
         onLoaded: function() {
@@ -213,6 +220,20 @@
                 this.play($next);
             }
 
+        },
+
+        onProgress: function(ev, data){
+            var sound = this.isFlash ? JSON.parse(data) : $(ev.target)[0],
+                currentTime = Math.round(sound.currentTime),
+                duration = Math.round(sound.duration),
+                percentElapsed = currentTime / duration;
+
+            $(window).trigger('ubaplayerProgress', {
+                currentTime: currentTime,
+                duration: duration,
+                percentElapsed: percentElapsed,
+                track: this.currentTrack
+            });
         },
 
         canPlay: function(type) {
