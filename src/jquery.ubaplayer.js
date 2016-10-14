@@ -57,8 +57,11 @@
 
             //listen for clicks on the controls
             $("." + this.options.controlsClass).on("click", function(event) {
-                scope.updateTrackState(event);
-                return false;
+                // Only manage click events to audioButtonClass.
+                if ($(event.target).hasClass(scope.options.audioButtonClass)) {
+                    scope.updateTrackState(event);
+                    return false;
+                }
             });
 
             for (; i < ilen; i++) {
