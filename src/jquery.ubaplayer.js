@@ -107,7 +107,20 @@
         },
 
         play: function(element) {
-            this.$tgt = typeof element === 'undefined' ? $('.' + this.options.audioButtonClass).eq(0) : element;
+
+            var track;
+            if (this.options.shuffle)
+            {
+                 var numberoftracks = $('.' + this.options.audioButtonClass+':not(.ended)').length;
+                 if (numberoftracks > 0){
+
+                    var track = Math.floor((Math.random() * numberoftracks) + 0);
+                }
+            }else{
+                track = 0;
+            }
+
+            this.$tgt = typeof element === 'undefined' ? $('.' + this.options.audioButtonClass).eq(track) : element;
             this.currentTrack = this.getFileNameWithoutExtension(this.$tgt.attr("href"));
             this.isPlaying = true;
             this.$tgt.addClass(this.options.loadingClass);
