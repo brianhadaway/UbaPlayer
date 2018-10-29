@@ -61,11 +61,11 @@ ul {
 		background-position: 0 -107px;
 	}
 
-	.ubaplayer-button.playing {
+	.ubaplayer-button.ubaplayer-playing {
 		background-position: 0 -144px;
 	}
 
-	.ubaplayer-button.playing:hover {
+	.ubaplayer-button.ubaplayer-playing:hover {
 		background-position: 0 -180px;
 	}
 }
