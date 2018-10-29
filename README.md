@@ -37,7 +37,7 @@ In your web page:
 
 ## Documentation
 
-###Configuration Options & Their Defaults
+### Configuration Options & Their Defaults
 
 ```javascript
 defaults: {
